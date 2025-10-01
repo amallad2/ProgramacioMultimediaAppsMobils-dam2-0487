@@ -1,1 +1,1 @@
-# ProgramacioMultimediaAppsMobils-dam2-0487
+# Programació Multimèdia d'Aplicacions Mòbils
