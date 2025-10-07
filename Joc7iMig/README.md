@@ -35,60 +35,134 @@ Les cartes les podem considerar com a **Buttons** o bé com a **ImageView**.
 Cada cop que fem **clic sobre una de les cartes**, aquesta es **donarà la volta**, mostrant el seu valor i:
 
 - **Sumarà +1** al número de cartes utilitzades.  
-- **Incrementarà** el valor total de la puntuació de les cartes aixecades.
+- Farà el  **Càlcul Total ** de la puntuació de les cartes aixecades.
 
-Si tornem a clicar la carta, **tornar-se a donar la volta**.
+Si tornem a clicar la carta, **tornar-se a donar la volta**. La carta quedarà tapada i:
+- **Sumarà -1** al número de cartes utilitzades.  
+- Farà el **Càlcul Total ** de la puntuació de les cartes aixecades.
 
 ---
 
 ## 3. Annexes
 
-Per realitzar la pràctica, necessitarem crear un nou objecte anomenat **`Carta`**, amb el codi següent (que haureu d’afegir al mateix directori on es troba el `Main.java`):
+Per realitzar la pràctica, necessitarem crear un data class  anomenat **`Card.kt`**, amb el codi següent:
 
-### `Carta.java`
+### `Card.kt`
 
-```java
-package com.example.mon.sumacartas;
+```kotlin
+package org.proven.seven
 
-/**
- * Created by mon on 13/10/15.
- */
+data class Card(var value: Double, var isVisible: Boolean)
+```
 
-public class Carta {
-    // Atributs
-    boolean visible;
-    int valor;
-    String pal = "";
 
-    // Constructor
-    public Carta(int v, String p) {
-        valor = v;
-        pal = p;
-        visible = false;
+### `Model.kt`
+
+```kotlin
+package org.proven.seven
+
+import kotlin.random.Random
+
+class Model {
+
+    companion object {
+        const val PLAYING = 1
+        const val WAITING_PLAY = 2
     }
 
-    // Getters i setters
-    public String getPal() {
-        return pal;
+    var numIntents: Int = 0
+        private set // El setter es privado para que solo se pueda modificar desde la clase
+
+    var listCards: MutableList<Card> = mutableListOf()
+        private set
+
+    var stateGame: Int = 0
+
+    /**
+     * Inicializa la lista de cartas con valores predefinidos.
+     * Las cartas no son visibles al principio.
+     *
+     * @param numCards El número de cartas a crear.
+     */
+    private fun initCards(numCards: Int) {
+        listCards.clear()
+        for (i in 0 until numCards) {
+            val temp = i % 8
+            val value = if (temp == 0) 0.5 else temp.toDouble()
+            listCards.add(Card(value, false))
+        }
+        // Descomentar para barajar las cartas en cada partida
+        // listCards.shuffle()
     }
 
-    public void setPal(String pal) {
-        this.pal = pal;
+    /**
+     * Reinicia el juego, restableciendo los intentos e inicializando las cartas.
+     *
+     * @param numCards El número de cartas para la nueva partida.
+     */
+    fun restartGame(numCards: Int) {
+        numIntents = 0
+        initCards(numCards)
+        stateGame = PLAYING
     }
 
-    public boolean isVisible() {
-        return visible;
+    /**
+     * Incrementa el contador de intentos en uno.
+     */
+    fun incrementIntent() {
+        numIntents++
     }
 
-    public void setVisible(boolean visible) {
-        this.visible = visible;
+    /**
+     * Calcula la suma de los valores de las cartas visibles.
+     *
+     * @return La suma total de las cartas boca arriba.
+     */
+    fun getSumCards(): Double {
+        return listCards.filter { it.isVisible }.sumOf { it.value }
     }
 
-    public int getValor() {
-        return valor;
+    /**
+     * Cambia el estado de visibilidad (de visible a oculto y viceversa) de una carta.
+     *
+     * @param position La posición de la carta en la lista.
+     */
+    fun swapCard(position: Int) {
+        if (position in listCards.indices) {
+            val card = listCards[position]
+            card.isVisible = !card.isVisible
+        }
     }
 
-    public void setValor(int valor) {
-        this.valor = valor;
+    /**
+     * Obtiene una carta por su posición.
+     *
+     * @param pos La posición de la carta.
+     * @return La carta en esa posición o null si la posición es inválida.
+     */
+    fun getCard(pos: Int): Card? {
+        return listCards.getOrNull(pos)
+    }
+
+    /**
+     * Devuelve el número total de cartas en el juego.
+     */
+    fun getSizeCards(): Int {
+        return listCards.size
     }
 }
+
+// Ejemplo de uso del Modelo, equivalente al método main de Java
+fun main() {
+    val m = Model()
+    m.restartGame(8)
+    m.getCard(3)?.isVisible = true
+    println("Suma 1: ${m.getSumCards()}")
+    m.getCard(4)?.isVisible = true
+    println("Suma 2: ${m.getSumCards()}")
+    m.getCard(0)?.isVisible = true
+    println("Suma 3: ${m.getSumCards()}")
+    m.getCard(4)?.isVisible = false
+    println("Suma 4: ${m.getSumCards()}")
+}
+```
