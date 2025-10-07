@@ -5,8 +5,6 @@ L'objectiu del joc és donar voltes a una sèrie de cartes fins a aconseguir el 
 
 Les cartes les trobareu al directori img/ i són cartes de **7 valors diferents (de l'1 al 7)** i una carta **especial (amb el signe +)** que puntua com a **0.5**.
 
-[![Exemple de layout](https://github.com/amallad2/ProgramacioMultimediaAppsMobils-dam2-0487/blob/main/Joc7iMig/cartes.png?raw=true)]: # 
-
 [Els **pals** de les cartes els podrem simplificar per la inicial del seu color en anglès:  ]: # 
 [`b = blue`, `y = yellow`, `g = green`, `r = red`, `p = purple`, `d = dragon`.]: # 
 
