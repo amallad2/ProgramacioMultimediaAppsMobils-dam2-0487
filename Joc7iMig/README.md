@@ -35,11 +35,11 @@ Les cartes les podem considerar com a **Buttons** o bé com a **ImageView**.
 Cada cop que fem **clic sobre una de les cartes**, aquesta es **donarà la volta**, mostrant el seu valor i:
 
 - **Sumarà +1** al número de cartes utilitzades.  
-- Farà el  **Càlcul Total ** de la puntuació de les cartes aixecades.
+- Farà el  **Càlcul Total** de la puntuació de les cartes aixecades.
 
 Si tornem a clicar la carta, **tornar-se a donar la volta**. La carta quedarà tapada i:
 - **Sumarà -1** al número de cartes utilitzades.  
-- Farà el **Càlcul Total ** de la puntuació de les cartes aixecades.
+- Farà el **Càlcul Total** de la puntuació de les cartes aixecades.
 
 ---
 
