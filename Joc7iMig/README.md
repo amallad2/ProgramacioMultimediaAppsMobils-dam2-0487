@@ -38,6 +38,7 @@ Si tornem a clicar la carta, **tornar-se a donar la volta**. La carta quedarà t
 - **Sumarà -1** al número de cartes utilitzades.  
 - Farà el **Càlcul Total** de la puntuació de les cartes aixecades.
 
+
 ---
 
 ## 3. Annexes
