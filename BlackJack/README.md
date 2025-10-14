@@ -1,5 +1,6 @@
 # Pràctica de BlackJack
 
+[Enunciat de la pràctica](BlackJackFase1y2.odt)
 
 ### Merge Images Kotlin
 
