@@ -22,6 +22,7 @@ El jugador decidirà la quantitat a apostar abans de començar la ma.
 - Si el jugador aconsegueix BlackJack (21 amb només dues cartes, és a dir una figura i un As) guanyarà la quantitat apostada multiplicada per 1,5.
 
 
+## Kotlin
 
 ### Merge Images Kotlin
 
