@@ -5,21 +5,21 @@
 ## Regles del joc
 
 L’objectiu principal del BlakcJack és sumar 21 punts o el més a prop possible amb les cartes, sense passar-se. Cada jugador compiteix només contra el crupier, tractant de tindre una ma millor que la seva.
-•	Les cartes del 2 al 10 tenen el seu valor nominal
-•	L’As pot tindre el valor d’ 1 o 11
-•	Les figures (J, Q, K) valen 10
+- Les cartes del 2 al 10 tenen el seu valor nominal
+- L’As pot tindre el valor d’ 1 o 11
+- Les figures (J, Q, K) valen 10
 
 Al principi de cada ma es reparteixen dues cartes pel jugador i pel crupier. De les cartes del crupier només es veurà el valor de la primera i la segona estara cap per avall.
 
 El torn sempre comença pel jugador, que demanarà cartes d’una en una  fins a que es planti o arribi a 21. Si el jugador es passa perd la ma directament sense necessitat que jugui el crupier.
 
 Un cop el jugador acaba (es planta, arriba a 21 o es passa) serà el torn del crupier, que sempre juga de la mateixa forma:
-•	demanarà cartes sempre que la seva ma sumi 16 o menys.
+- demanarà cartes sempre que la seva ma sumi 16 o menys.
  
 El jugador decidirà la quantitat a apostar abans de començar la ma.
-•	Si el jugador guanya (té mes punts que el crupier) guanyarà la quantitat apostada.
-•	Si empaten es retornen els diners
-•	Si el jugador aconsegueix BlackJack (21 amb només dues cartes, és a dir una figura i un As) guanyarà la quantitat apostada multiplicada per 1,5.
+- Si el jugador guanya (té mes punts que el crupier) guanyarà la quantitat apostada.
+- Si empaten es retornen els diners
+- Si el jugador aconsegueix BlackJack (21 amb només dues cartes, és a dir una figura i un As) guanyarà la quantitat apostada multiplicada per 1,5.
 
 
 
