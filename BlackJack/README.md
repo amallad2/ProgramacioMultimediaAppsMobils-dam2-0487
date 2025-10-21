@@ -61,3 +61,45 @@ fun addElementLayout() {
         l.addView(iv, iv.layoutParams)  // add iv to layoutsecondary
     }
 ```
+
+
+### Canvi d'Activity
+
+Pasos:
+
+1️⃣ — Crear la segona Activity
+
+A Android Studio, fes clic dret sobre el teu paquet (com.example.nomapp)
+→ New → Activity → Empty Activity
+
+- Dona-li un nom, per exemple: SecondActivity
+- Deixa marcada l’opció Generate Layout File
+- Es crearà automàticament el fitxer activity_second.xml
+
+2️⃣ Assegura’t que la nova Activity estigui al AndroidManifest.xml
+
+Android Studio ho afegeix automàticament, però comprova-ho:    <activity android:name=".SecondActivity" />
+
+3️⃣ Obrir la segona Activity:
+
+```kotlin
+val intent = Intent(this, SecondActivity::class.java)
+startActivity(intent)
+```
+
+4️⃣ — (Opcional) Passar dades entre Activities
+
+Si vols enviar informació (per exemple, un nom o puntuació):
+
+➤ A la primera Activity:
+```kotlin
+val intent = Intent(this, SecondActivity::class.java)
+intent.putExtra("nom_usuari", "Adrian")
+startActivity(intent)
+```
+
+➤ A la segona Activity:
+```kotlin
+val nom = intent.getStringExtra("nom_usuari")
+findViewById<TextView>(R.id.textView).text = "Hola, $nom!"
+```
