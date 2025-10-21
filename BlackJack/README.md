@@ -78,7 +78,10 @@ A Android Studio, fes clic dret sobre el teu paquet (com.example.nomapp)
 
 2️⃣ Assegura’t que la nova Activity estigui al AndroidManifest.xml
 
-Android Studio ho afegeix automàticament, però comprova-ho:    <activity android:name=".SecondActivity" />
+Android Studio ho afegeix automàticament, però comprova-ho:  
+```xml
+<activity android:name=".SecondActivity" />
+```
 
 3️⃣ Obrir la segona Activity:
 
