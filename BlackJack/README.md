@@ -106,3 +106,11 @@ startActivity(intent)
 val nom = intent.getStringExtra("nom_usuari")
 findViewById<TextView>(R.id.textView).text = "Hola, $nom!"
 ```
+
+6️⃣ — (Opcional) Tornar enrere
+
+A la segona Activity pots afegir: el que fa és tancar l'Activity actual i carrega l'anterior, si és l'última tanca l'aplicació
+```kotlin
+finish() // tanca l'Activity actual
+finishAffinity()  // tanca totes les Activity carregades. Tanca App.
+```
