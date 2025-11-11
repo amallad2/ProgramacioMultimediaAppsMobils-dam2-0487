@@ -2,6 +2,8 @@
 
 [Enunciat de la pràctica](BlackJackFase1y2.odt)
 
+[Fase 3](fase3.md)
+
 ## Regles del joc
 
 L’objectiu principal del BlakcJack és sumar 21 punts o el més a prop possible amb les cartes, sense passar-se. Cada jugador compiteix només contra el crupier, tractant de tindre una ma millor que la seva.
