@@ -2,7 +2,7 @@
 
 Guarda amb un fitxer de Text cada partida que es faci amb una línea de la següent manera:
 
-Player: A diamond,5 heart,6 spades;Dealer:A diamond,A heart;Money:500;Bet:30; Lost
+*Player: A diamond,5 heart,6 spades;Dealer:A diamond,A heart;Money:500;Bet:30; Lost*
 
 Fes una pantalla a la que es pugui veure la llista de partides jugades amb un RecyclerView
 
